@@ -1,0 +1,33 @@
+<section class="container p-4">
+  <h3 class="heading">Dashboard</h3>
+  <section class="row p-2">
+    <ng-container *ngFor="let state of statesListDataSource">
+      <div class="col" (click)="onGroupHeadClick($event)">
+        <div class="group">
+          <h6 class="group-heading">
+            {{ state?.title }}
+            <span [id]="'state-' + state.id" class="float-end cross">X</span>
+          </h6>
+          <app-task-listing [state]="state"></app-task-listing>
+        </div>
+      </div>
+    </ng-container>
+    <div class="col">
+      <div class="group">
+        <input
+          class="W-100 mb-2"
+          type="text"
+          placeholder="Enter list title"
+          [(ngModel)]="addNewStateField"
+        />
+        <input
+          [disabled]="addNewStateField == ''"
+          class="button"
+          type="button"
+          value="Add List"
+          (click)="onAddClickHandler()"
+        />
+      </div>
+    </div>
+  </section>
+</section>

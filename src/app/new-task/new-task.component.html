@@ -1,0 +1,31 @@
+<form class="add-task" (ngSubmit)="addNewTask()" [formGroup]="newTaskForm">
+  <input
+    type="text"
+    formControlName="title"
+    placeholder="Enter title"
+    required
+  />
+  <div *ngIf="title?.invalid && (title?.dirty || title?.touched)">
+    <div *ngIf="title?.errors?.['required']">
+      <p class="error-text">Title is required</p>
+    </div>
+  </div>
+  <input
+    type="text"
+    formControlName="description"
+    placeholder="Enter description"
+  />
+  <div
+    *ngIf="description?.invalid && (description?.dirty || description?.touched)"
+  >
+    <div *ngIf="description?.errors?.['required']">
+      <p class="error-text">Description is required</p>
+    </div>
+  </div>
+  <input
+    class="button"
+    [disabled]="!newTaskForm.valid"
+    type="submit"
+    value="Add"
+  />
+</form>

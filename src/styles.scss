@@ -1,0 +1,30 @@
+/* You can add global styles to this file, and also import other style files */
+.cross {
+  cursor: pointer;
+  font-size: 18px;
+}
+
+input {
+  width: 100%;
+  margin-bottom: 10px;
+  border-radius: 5px;
+}
+
+.button {
+  background: black;
+  outline: 0;
+  color: white;
+  border-radius: 5px;
+  width: 90px;
+  opacity: 1;
+
+  &:disabled {
+    opacity: 0.5;
+  }
+}
+
+input[type="text"] {
+  outline: 0;
+  border: 1px solid #938282;
+  padding: 5px;
+}

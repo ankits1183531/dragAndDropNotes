@@ -1,0 +1,24 @@
+<section
+  [id]="state?.type"
+  class="task-wrapper"
+  (click)="onGroupClick($event)"
+  (drop)="dropEvent($event)"
+  (dragover)="dragover($event)"
+>
+  <ng-container *ngFor="let task of taskListDataSource; let i = index">
+    <article
+      [attr.data-index]="i"
+      draggable="true"
+      (dragstart)="dragStartEvent($event)"
+      [id]="'task-' + task.id"
+      class="task mb-1"
+    >
+      <h6 class="p-2">
+        {{ task?.title }}
+        <span [id]="'close-' + task.id" class="float-end cross">X</span>
+      </h6>
+      <p class="p-2">{{ task?.description }}</p>
+    </article>
+  </ng-container>
+  <app-new-task (saveTaskEmitter)="saveNewTask($event)"></app-new-task>
+</section>

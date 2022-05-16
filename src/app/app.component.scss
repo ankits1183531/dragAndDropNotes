@@ -1,0 +1,18 @@
+.heading {
+  padding: 15px 10px;
+  background: #dfdee5;
+  font-weight: 300;
+}
+
+.group {
+  background: #dfdee6;
+  padding: 10px;
+  height: 80vh;
+  overflow-y: scroll;
+  border-radius: 10px;
+  .group-heading {
+    border-radius: 10px;
+    margin-bottom: 30px;
+    padding: 10px;
+  }
+}
